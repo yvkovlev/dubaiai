@@ -1,11 +1,9 @@
 import { call, put, SagaReturnType, select, } from 'redux-saga/effects';
 
 import { fireSignIn, fireSignUp, pendingSignIn, successSignIn, } from './actions';
-import { setActiveLayout } from '../layout/actions';
 import { api } from '../../api';
 import { SuccessSignInPayload } from './types';
 // import { UserState } from '../user/types';
-import { Views } from '../../constants';
 // import { Stories, BudgetPanels } from '../../constants';
 // import { getLaunchParamsString } from '../../utils/common';
 // import { AmplitudeEvents, sendAmplitudeEvent } from '../../utils/amplitude';
@@ -52,11 +50,11 @@ export function* signInSaga() {
   }
 
   yield put(successSignIn(signInResult.data));
-  yield put(
-    setActiveLayout({
-      activeView: Views.LANDING,
-    }),
-  );
+  // yield put(
+  //   setActiveLayout({
+  //     activeView: Views.LANDING,
+  //   }),
+  // );
 
   // sendAmplitudeEvent(AmplitudeEvents.SIGN_IN_COMPLETED);
 }

@@ -1,0 +1,17 @@
+.Payment {
+
+}
+
+.Payment__section {
+
+}
+
+.Payment__form {
+    text-align: left;
+    margin-top: var(--margin-extra-large);
+    padding: var(--padding-medium);
+    border: 1px solid #dee2e6;
+    border-radius: 4px;
+    display: flex;
+    flex-direction: column;
+}

@@ -1,0 +1,8 @@
+.CodeConfirmation {
+
+}
+
+.CodeConfirmation__form {
+    margin-top: var(--margin-extra-large);
+    display: flex;
+}

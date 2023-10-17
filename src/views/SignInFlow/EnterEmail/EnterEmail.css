@@ -1,0 +1,12 @@
+.EnterEmail {
+
+}
+
+.EnterEmail__section {
+
+}
+
+.EnterEmail__form {
+    margin-top: var(--margin-extra-large);
+    display: flex;
+}

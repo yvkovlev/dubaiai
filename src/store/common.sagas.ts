@@ -9,7 +9,6 @@ import { refreshAccessToken, signIn } from './auth/saga';
 import { getLaunchParamsString } from '../utils/common';
 import { successSignIn } from './auth/actions';
 import { api } from '../api';
-import { ErrorMessages } from '../constants';
 
 function* refreshTokens() {
   const refreshToken: string = yield select(selectRefreshToken);
