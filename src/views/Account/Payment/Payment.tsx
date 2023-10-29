@@ -20,7 +20,7 @@ export const Payment: FC = () => {
 
   return (
     <div className="Payment">
-      <Container className="Payment__section SignInFlow__section">
+      <Container className="Payment__section Flow__section">
         <Row>
           <Col xs={3} />
           <Col xs={6}>
@@ -54,7 +54,7 @@ export const Payment: FC = () => {
                 <Form.Label>Card Number</Form.Label>
                 <Form.Control type="text" placeholder="Your full name..." />
               </Form.Group>
-              <Button type="submit" className="mx-2" onClick={() => navigate(Paths.SUBSCRIBE_RESULT)}>
+              <Button type="submit" className="mx-2" onClick={() => navigate(Paths.ACCOUNT_SUBSCRIBE_RESULT)}>
                 Continue
               </Button>
             </div>

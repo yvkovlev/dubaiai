@@ -20,7 +20,7 @@ export const EnterEmail: FC = () => {
 
   return (
     <div className="EnterEmail">
-      <Container className="EnterEmail__section SignInFlow__section">
+      <Container className="EnterEmail__section Flow__section">
         <Row>
           <Col xs={3} />
           <Col xs={6}>
