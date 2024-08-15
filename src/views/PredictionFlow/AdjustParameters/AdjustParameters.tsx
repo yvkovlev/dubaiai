@@ -23,8 +23,8 @@ export const AdjustParameters: FC = () => {
     <div className="AdjustParameters">
       <Container className="AdjustParameters__section Flow__section">
         <Row>
-          <Col xs={3} />
-          <Col xs={6}>
+          <Col lg={3} />
+          <Col lg={6}>
             <FlowHeadline
               text="Step 2/3"
               className="mb-3"
@@ -133,7 +133,7 @@ export const AdjustParameters: FC = () => {
               </Button>
             </div>
           </Col>
-          <Col xs={3} />
+          <Col lg={3} />
         </Row>
       </Container>
     </div>

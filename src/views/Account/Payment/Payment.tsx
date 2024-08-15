@@ -22,8 +22,8 @@ export const Payment: FC = () => {
     <div className="Payment">
       <Container className="Payment__section Flow__section">
         <Row>
-          <Col xs={3} />
-          <Col xs={6}>
+          <Col lg={3} />
+          <Col lg={6}>
             <FlowHeadline
               text="Almost there!"
               className="mb-3"
@@ -59,7 +59,7 @@ export const Payment: FC = () => {
               </Button>
             </div>
           </Col>
-          <Col xs={3} />
+          <Col lg={3} />
         </Row>
       </Container>
     </div>

@@ -1,7 +1,6 @@
 export enum Paths {
   MAIN = '/',
-  SIGN_IN = '/sign-in',
-  SIGN_IN_CODE_CONFIRMATION = '/sign-in/code-confirmation',
+  AUTH = '/auth',
   ACCOUNT = '/account',
   ACCOUNT_PAYMENT = '/account/payment',
   ACCOUNT_SUBSCRIBE_RESULT = '/account/subscribe-result',

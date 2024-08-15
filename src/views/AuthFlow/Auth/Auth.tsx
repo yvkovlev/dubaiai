@@ -14,12 +14,12 @@ import { useAppDispatch } from '../../../store';
 import { FlowHeadline } from '../../../components/Flow/FlowHeadline/FlowHeadline';
 import { FlowHeader } from '../../../components/Flow/FlowHeader/FlowHeader';
 import { FlowText } from '../../../components/Flow/FlowText/FlowText';
-import { AuthFormTabs } from '../../../constants';
+import { AuthFormTabs, Paths } from '../../../constants';
 import { signInThunk, signUpThunk } from '../../../store/auth.reducer';
 
-import './EnterEmail.css';
+import './Auth.css';
 
-export const EnterEmail: FC = () => {
+export const Auth: FC = () => {
   const dispatch = useAppDispatch();
   const navigate = useNavigate();
 
@@ -40,6 +40,12 @@ export const EnterEmail: FC = () => {
     dispatch(signInThunk({
       email,
       password,
+      onSuccess: () => {
+        navigate(Paths.PREDICTION_ADJUST_PARAMETERS);
+      },
+      onFailure: () => {
+        // error
+      },
     }));
   }, [email, password]);
 
@@ -59,15 +65,21 @@ export const EnterEmail: FC = () => {
     dispatch(signUpThunk({
       email,
       password,
+      onSuccess: () => {
+        // success
+      },
+      onFailure: () => {
+        // error
+      },
     }));
   }, [email, password]);
 
   return (
-    <div className="EnterEmail">
-      <Container className="EnterEmail__section Flow__section">
+    <div className="Auth">
+      <Container className="Auth__section Flow__section">
         <Row>
-          <Col xs={3} />
-          <Col xs={6}>
+          <Col lg={3} />
+          <Col lg={6}>
             <FlowHeadline
               text="Sign-up or login to your account"
               className="mb-3"
@@ -79,7 +91,7 @@ export const EnterEmail: FC = () => {
             <FlowText
               text="Enter your email and password. If you are have not an account, please, enter a new credentials. You will use it to login:"
             />
-            <div className="EnterEmail__form">
+            <div className="Auth__form">
               <Tabs
                 activeKey={tab}
                 onSelect={(newTab) => setTab(newTab as AuthFormTabs)}
@@ -145,7 +157,7 @@ export const EnterEmail: FC = () => {
               </Tabs>
             </div>
           </Col>
-          <Col xs={3} />
+          <Col lg={3} />
         </Row>
       </Container>
     </div>

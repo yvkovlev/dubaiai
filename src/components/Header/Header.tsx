@@ -29,7 +29,7 @@ export const Header: FC = () => {
             <NavLink to={Paths.PREDICTION} className="Header__navLink nav-link">PREDICTION</NavLink>
           </Nav>
           <Nav className="ml-auto">
-            <NavLink to={Paths.SIGN_IN} className="nav-link">Sign-in</NavLink>
+            <NavLink to={Paths.AUTH} className="nav-link">Sign-in / Sign-up</NavLink>
           </Nav>
         </Navbar.Collapse>
       </Container>

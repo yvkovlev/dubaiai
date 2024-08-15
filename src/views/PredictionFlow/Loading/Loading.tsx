@@ -17,8 +17,8 @@ export const Loading: FC = () => {
     <div className="Loading">
       <Container className="Loading__section Flow__section">
         <Row>
-          <Col xs={3} />
-          <Col xs={6}>
+          <Col lg={3} />
+          <Col lg={6}>
             <FlowHeadline
               text="Step 3/3"
               className="mb-3"
@@ -34,7 +34,7 @@ export const Loading: FC = () => {
               <ProgressBar animated now={45} />
             </div>
           </Col>
-          <Col xs={3} />
+          <Col lg={3} />
         </Row>
       </Container>
     </div>

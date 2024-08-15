@@ -1,12 +1,12 @@
-.EnterEmail {
+.Auth {
 
 }
 
-.EnterEmail__section {
+.Auth__section {
 
 }
 
-.EnterEmail__form {
+.Auth__form {
     text-align: left;
     margin-top: var(--margin-extra-large);
     padding: var(--padding-medium);

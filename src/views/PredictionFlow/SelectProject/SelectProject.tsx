@@ -22,8 +22,8 @@ export const SelectProject: FC = () => {
     <div className="SelectProject">
       <Container className="SelectProject__section Flow__section">
         <Row>
-          <Col xs={3} />
-          <Col xs={6}>
+          <Col lg={3} />
+          <Col lg={6}>
             <FlowHeadline
               text="Step 1/3"
               className="mb-3"
@@ -47,7 +47,7 @@ export const SelectProject: FC = () => {
               </Button>
             </div>
           </Col>
-          <Col xs={3} />
+          <Col lg={3} />
         </Row>
       </Container>
     </div>

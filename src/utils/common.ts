@@ -43,5 +43,3 @@ export const scrollToTop = () => {
     top: 0,
   });
 };
-
-

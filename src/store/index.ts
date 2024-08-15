@@ -2,13 +2,16 @@ import { combineReducers, configureStore } from '@reduxjs/toolkit';
 import { useDispatch, TypedUseSelectorHook, useSelector } from 'react-redux';
 
 import { authReducer, AuthState } from './auth.reducer';
+import { userReducer, UserState } from './user.reducer';
 
 export interface AppState {
   auth: AuthState,
+  user: UserState,
 }
 
 const rootReducer = combineReducers({
-  auth: authReducer
+  auth: authReducer,
+  user: userReducer,
 });
 
 export const store = configureStore({
