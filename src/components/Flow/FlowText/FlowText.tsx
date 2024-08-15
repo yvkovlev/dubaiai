@@ -15,7 +15,7 @@ export const FlowText: FC<FlowTextProps> = ({
 }) => {
   return (
     <p className={`FlowText ${className}`}>
-      { loading ? "Loading..." : text }
+      { loading ? 'Loading...' : text }
     </p>
   );
 };

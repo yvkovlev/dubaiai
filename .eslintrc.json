@@ -51,7 +51,8 @@
     "@typescript-eslint/no-unused-vars": ["warn"],
     "no-debugger": "warn",
     "@typescript-eslint/return-await": "off",
-    "no-param-reassign": "off"
+    "no-param-reassign": "off",
+    "import/no-cycle": "off"
   },
   "settings": {
     "import/resolver": {

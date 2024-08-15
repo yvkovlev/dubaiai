@@ -15,7 +15,7 @@ export const FlowHeader: FC<FlowHeaderProps> = ({
 }) => {
   return (
     <h1 className={`FlowHeader ${className}`}>
-      { loading ? "Loading..." : text }
+      { loading ? 'Loading...' : text }
     </h1>
   );
 };

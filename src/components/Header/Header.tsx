@@ -22,9 +22,11 @@ export const Header: FC = () => {
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="m-auto">
-            <NavLink to={Paths.MAIN} className="Header__navLink nav-link">Properties</NavLink>
-            <NavLink to="#link" className="Header__navLink nav-link">Pricing</NavLink>
-            <NavLink to="#link" className="Header__navLink nav-link">Contacts</NavLink>
+            <NavLink to={Paths.MAIN} className="Header__navLink nav-link">MAIN</NavLink>
+            <NavLink to={Paths.ACCOUNT_PAYMENT} className="Header__navLink nav-link">ACCOUNT_PAYMENT</NavLink>
+            <NavLink to={Paths.PREDICTION_SELECT_PROJECT} className="Header__navLink nav-link">PREDICTION_SELECT_PROJECT</NavLink>
+            <NavLink to={Paths.PREDICTION_ADJUST_PARAMETERS} className="Header__navLink nav-link">PREDICTION_ADJUST_PARAMETERS</NavLink>
+            <NavLink to={Paths.PREDICTION} className="Header__navLink nav-link">PREDICTION</NavLink>
           </Nav>
           <Nav className="ml-auto">
             <NavLink to={Paths.SIGN_IN} className="nav-link">Sign-in</NavLink>

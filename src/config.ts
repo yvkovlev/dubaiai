@@ -1,6 +1,6 @@
 export const config = {
-  url: 'https://dev.dubaiai.ai',
-  amplitude: {
+  API_URL: 'http://quve.ru:8080/api',
+  APMLITUDE: {
     API_KEY: '123',
   },
 };

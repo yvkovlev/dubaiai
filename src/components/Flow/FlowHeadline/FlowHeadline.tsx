@@ -15,7 +15,7 @@ export const FlowHeadline: FC<FlowHeadlineProps> = ({
 }) => {
   return (
     <h4 className={`FlowHeadline ${className}`}>
-      { loading ? "Loading..." : text }
+      { loading ? 'Loading...' : text }
     </h4>
   );
 };

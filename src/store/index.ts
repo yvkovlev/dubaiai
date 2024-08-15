@@ -1,18 +1,24 @@
-import createMiddlewareSaga from 'redux-saga';
-import { legacy_createStore as createStore, applyMiddleware } from 'redux';
-import { composeWithDevTools } from 'redux-devtools-extension';
+import { combineReducers, configureStore } from '@reduxjs/toolkit';
+import { useDispatch, TypedUseSelectorHook, useSelector } from 'react-redux';
 
-import { rootSaga } from './rootSaga';
-import { reducers } from './reducers';
+import { authReducer, AuthState } from './auth.reducer';
 
-const sagaMiddleware = createMiddlewareSaga();
-let enhancer = applyMiddleware(sagaMiddleware);
-
-if (process.env.REACT_APP_ENV === 'development') {
-  const devEnhancer = composeWithDevTools({ trace: true });
-  enhancer = devEnhancer(enhancer);
+export interface AppState {
+  auth: AuthState,
 }
 
-export const store = createStore(reducers, enhancer);
+const rootReducer = combineReducers({
+  auth: authReducer
+});
 
-sagaMiddleware.run(rootSaga);
+export const store = configureStore({
+  reducer: rootReducer,
+  devTools: true,
+});
+
+export type RootDispatch = typeof store.dispatch;
+export type RootState = ReturnType<typeof rootReducer>;
+
+type DispatchFunc = () => RootDispatch;
+export const useAppDispatch: DispatchFunc = useDispatch;
+export const useAppSelector: TypedUseSelectorHook<RootState> = useSelector;
