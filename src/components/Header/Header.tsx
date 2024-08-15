@@ -24,9 +24,9 @@ export const Header: FC = () => {
           <Nav className="m-auto">
             <NavLink to={Paths.MAIN} className="Header__navLink nav-link">MAIN</NavLink>
             <NavLink to={Paths.ACCOUNT_PAYMENT} className="Header__navLink nav-link">ACCOUNT_PAYMENT</NavLink>
-            <NavLink to={Paths.PREDICTION_SELECT_PROJECT} className="Header__navLink nav-link">PREDICTION_SELECT_PROJECT</NavLink>
-            <NavLink to={Paths.PREDICTION_ADJUST_PARAMETERS} className="Header__navLink nav-link">PREDICTION_ADJUST_PARAMETERS</NavLink>
-            <NavLink to={Paths.PREDICTION} className="Header__navLink nav-link">PREDICTION</NavLink>
+            <NavLink to={Paths.PROPERTY_PREDICTION_SELECT_PROJECT} className="Header__navLink nav-link">PROPERTY_PREDICTION_SELECT_PROJECT</NavLink>
+            <NavLink to={Paths.PROPERTY_PREDICTION_ADJUST_PARAMETERS} className="Header__navLink nav-link">PROPERTY_PREDICTION_ADJUST_PARAMETERS</NavLink>
+            <NavLink to={Paths.PROPERTY_PREDICTION} className="Header__navLink nav-link">PROPERTY_PREDICTION</NavLink>
           </Nav>
           <Nav className="ml-auto">
             <NavLink to={Paths.AUTH} className="nav-link">Sign-in / Sign-up</NavLink>

@@ -1,46 +1,29 @@
-import axios, { AxiosRequestConfig } from 'axios';
-
+import { makeRequest } from '../index';
 import {
-  RefreshAccessTokenRequest,
-  RefreshAccessTokenResponse,
-  SignInRequest,
-  SignInResponse,
-  SignUpRequest,
-  SignUpResponse,
+  PropertyPricePredictionRequest,
+  PropertyPricePredictionResponse,
+  PropertySearchRequest,
+  PropertySearchResponse,
 } from './types';
 import { ApiEndpoint, ApiEndpointVersion } from '../../constants';
-import { config } from '../../config';
 
-const api = axios.create({
-  baseURL: config.API_URL,
-});
-
-export const signIn = async ({ email, password }: SignInRequest) => {
-  const requestConfig: AxiosRequestConfig = {
-    url: `${config.API_URL}/${ApiEndpointVersion.V1}/${ApiEndpoint.SIGN_IN}`,
+export async function getPropertyPricePrediction(parameters: PropertyPricePredictionRequest): Promise<PropertyPricePredictionResponse | null> {
+  return makeRequest<PropertyPricePredictionResponse>({
+    endpoint: ApiEndpoint.PROPERTY_PREDICT,
     method: 'post',
-    data: { email, password },
-  };
+    endpoint_version: ApiEndpointVersion.V1,
+    data: parameters,
+  });
+}
 
-  return api<SignInResponse>(requestConfig);
-};
-
-export const signUp = async ({ email, password }: SignUpRequest) => {
-  const requestConfig: AxiosRequestConfig = {
-    url: `${config.API_URL}/${ApiEndpointVersion.V1}/${ApiEndpoint.SIGN_UP}`,
+export async function getPropertySearchResults(data: PropertySearchRequest, accessToken: string): Promise<PropertySearchResponse> {
+  return makeRequest({
+    endpoint: ApiEndpoint.PROPERTY_SEARCH,
     method: 'post',
-    data: { email, password },
-  };
-
-  return api<SignUpResponse>(requestConfig);
-};
-
-export const refreshAccessToken = async ({ refreshToken }: RefreshAccessTokenRequest) => {
-  const requestConfig: AxiosRequestConfig = {
-    url: `${config.API_URL}/${ApiEndpointVersion.V1}/${ApiEndpoint.REFRESH_ACCESS_TOKEN}`,
-    method: 'post',
-    data: { refreshToken },
-  };
-
-  return api<RefreshAccessTokenResponse>(requestConfig);
-};
+    endpoint_version: ApiEndpointVersion.V1,
+    data,
+    headers: {
+      Authorization: `Bearer ${accessToken}`,
+    },
+  });
+}

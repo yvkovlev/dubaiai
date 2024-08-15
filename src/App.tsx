@@ -24,9 +24,9 @@ export const App = () => {
         <Route path={Paths.AUTH} element={<Auth />} />
         <Route path={Paths.ACCOUNT_PAYMENT} element={<Payment />} />
         <Route path={Paths.ACCOUNT_SUBSCRIBE_RESULT} element={<SubscribeResult />} />
-        <Route path={Paths.PREDICTION_SELECT_PROJECT} element={<SelectProject />} />
-        <Route path={Paths.PREDICTION_ADJUST_PARAMETERS} element={<AdjustParameters />} />
-        <Route path={Paths.PREDICTION_LOADING} element={<Loading />} />
+        <Route path={Paths.PROPERTY_PREDICTION_SELECT_PROJECT} element={<SelectProject />} />
+        <Route path={Paths.PROPERTY_PREDICTION_ADJUST_PARAMETERS} element={<AdjustParameters />} />
+        <Route path={Paths.PROPERTY_PREDICTION_LOADING} element={<Loading />} />
       </Routes>
       <Footer />
     </>

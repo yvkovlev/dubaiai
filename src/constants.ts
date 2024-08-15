@@ -4,11 +4,11 @@ export enum Paths {
   ACCOUNT = '/account',
   ACCOUNT_PAYMENT = '/account/payment',
   ACCOUNT_SUBSCRIBE_RESULT = '/account/subscribe-result',
-  PREDICTION = '/prediction',
-  PREDICTION_SELECT_PROJECT = '/prediction/select-project',
-  PREDICTION_ADJUST_PARAMETERS = '/prediction/adjust-parameters',
-  PREDICTION_LOADING = '/prediction/loading',
-  PREDICTION_RESULT = '/prediction/result',
+  PROPERTY_PREDICTION = '/prediction',
+  PROPERTY_PREDICTION_SELECT_PROJECT = '/prediction/select-project',
+  PROPERTY_PREDICTION_ADJUST_PARAMETERS = '/prediction/adjust-parameters',
+  PROPERTY_PREDICTION_LOADING = '/prediction/loading',
+  PROPERTY_PREDICTION_RESULT = '/prediction/result',
 }
 
 export enum Langs {
@@ -19,10 +19,11 @@ export enum Langs {
 export const SUPPORTED_LANGUAGES = [Langs.EN, Langs.RU];
 
 export enum ApiEndpoint {
-  SIGN_UP = 'user',
-  SIGN_IN = 'user/login',
-  REFRESH_ACCESS_TOKEN = 'user/refresh',
-  PREDICT = 'property/predict',
+  AUTH_SIGN_UP = 'user',
+  AUTH_SIGN_IN = 'user/login',
+  AUTH_REFRESH_ACCESS_TOKEN = 'user/refresh',
+  PROPERTY_SEARCH = 'property/search',
+  PROPERTY_PREDICT = 'property/predict',
 }
 
 export enum ApiEndpointVersion {
@@ -30,6 +31,32 @@ export enum ApiEndpointVersion {
 }
 
 export enum AuthFormTabs {
-  SIGN_IN_TAB = 'SIGN_IN_TAB',
-  SIGN_UP_TAB = 'SIGN_UP_TAB',
+  AUTH_SIGN_IN_TAB = 'AUTH_SIGN_IN_TAB',
+  AUTH_SIGN_UP_TAB = 'AUTH_SIGN_UP_TAB',
+}
+
+export enum PropertyTransactionGroups {
+  'SALE',
+  'MORTGAGE',
+  'GIFT',
+}
+
+export enum PropertyRegistrationTypes {
+  'EXISTING',
+  'OFF_PLAN',
+}
+
+export enum PropertyRoomsTypes {
+  'SINGLE_ROOM',
+  'STUDIO',
+  'PENTHOUSE',
+  'ONE_B_R',
+  'TWO_B_R',
+  'THREE_B_R',
+  'FOUR_B_R',
+  'FIVE_B_R',
+  'SIX_B_R',
+  'SEVEN_B_R',
+  'EIGHT_B_R',
+  'NINE_B_R',
 }

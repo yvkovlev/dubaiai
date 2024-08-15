@@ -1,26 +1,27 @@
-export interface SignInRequest {
-  email: string;
-  password: string;
+import {
+  PropertyTransactionGroups,
+  PropertyRegistrationTypes,
+  PropertyRoomsTypes,
+} from "../../constants"
+import { PropertySearchResponseItem } from "../../store/property.search.reducer";
+
+export interface PropertyPricePredictionRequest {
+  id: number,
+  transactionGroup: PropertyTransactionGroups,
+  registrationType: PropertyRegistrationTypes,
+  rooms: PropertyRoomsTypes,
+  hasParking: boolean,
+  procedureArea: number,
 }
 
-export interface SignInResponse {
-  accessToken: string;
-  refreshToken: string;
+export interface PropertyPricePredictionResponse {
+  predictedPrice: string;
 }
 
-export interface SignUpRequest {
-  email: string;
-  password: string;
+export interface PropertySearchRequest {
+  query: string;
 }
 
-export interface SignUpResponse {
-  id: string;
-}
-
-export interface RefreshAccessTokenRequest {
-  refreshToken: string;
-}
-
-export interface RefreshAccessTokenResponse {
-  accessToken: string;
+export interface PropertySearchResponse {
+  items: PropertySearchResponseItem[];
 }

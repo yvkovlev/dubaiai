@@ -128,7 +128,7 @@ export const AdjustParameters: FC = () => {
                   </Form.Select>
                 </Col>
               </Form.Group>
-              <Button type="submit" onClick={() => navigate(Paths.PREDICTION_LOADING)}>
+              <Button type="submit" onClick={() => navigate(Paths.PROPERTY_PREDICTION_LOADING)}>
                 Continue
               </Button>
             </div>

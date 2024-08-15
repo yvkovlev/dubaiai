@@ -3,15 +3,18 @@ import { useDispatch, TypedUseSelectorHook, useSelector } from 'react-redux';
 
 import { authReducer, AuthState } from './auth.reducer';
 import { userReducer, UserState } from './user.reducer';
+import { propertySearchReducer, PropertySearchState } from './property.search.reducer';
 
 export interface AppState {
   auth: AuthState,
   user: UserState,
+  propertySearch: PropertySearchState,
 }
 
 const rootReducer = combineReducers({
   auth: authReducer,
   user: userReducer,
+  propertySearch: propertySearchReducer,
 });
 
 export const store = configureStore({

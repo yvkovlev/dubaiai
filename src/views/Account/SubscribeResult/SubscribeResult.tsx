@@ -39,7 +39,7 @@ export const SubscribeResult: FC = () => {
                 </>
               )}
             />
-            <Button type="submit" className="mx-2" onClick={() => navigate(Paths.PREDICTION_SELECT_PROJECT)}>
+            <Button type="submit" className="mx-2" onClick={() => navigate(Paths.PROPERTY_PREDICTION_SELECT_PROJECT)}>
               Get Prediction
             </Button>
           </Col>

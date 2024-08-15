@@ -11,7 +11,7 @@ interface Arguments {
   endpoint: ApiEndpoint;
   method: Method,
   endpoint_version: ApiEndpointVersion;
-  params?: Record<string, string>;
+  params?: Record<string, any>;
   data?: Record<string, any>;
   headers?: Record<string, any>;
 }
@@ -25,7 +25,7 @@ export const makeRequest = async <T = never>({
   headers,
 }: Arguments): Promise<T | any> => {
   const requestConfig: AxiosRequestConfig = {
-    url: `${config.API_URL}/${endpoint_version}/${endpoint}/`,
+    url: `${config.API_URL}/${endpoint_version}/${endpoint}`,
     method,
   };
 
@@ -41,10 +41,10 @@ export const makeRequest = async <T = never>({
     requestConfig.headers = headers;
   }
 
-  return api(requestConfig)
-    .then(() => {
-        return true;
-      })
+  return api<T>(requestConfig)
+    .then((response) => {
+      return response.data;
+    })
     .catch((error) => {
       if (error.response?.status === 403) {
         // Тут ебала с рефрешом токена

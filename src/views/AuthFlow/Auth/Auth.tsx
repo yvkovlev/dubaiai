@@ -26,7 +26,7 @@ export const Auth: FC = () => {
   const [email, setEmail] = useState<string | null>(null);
   const [password, setPassword] = useState<string | null>(null);
   const [isTermsChecked, setIsTermsChecked] = useState<boolean>(false);
-  const [tab, setTab] = useState<AuthFormTabs>(AuthFormTabs.SIGN_IN_TAB);
+  const [tab, setTab] = useState<AuthFormTabs>(AuthFormTabs.AUTH_SIGN_IN_TAB);
 
   const onSignInFormSubmit = useCallback(() => {
     if (['', null].includes(email) || !email) {
@@ -41,7 +41,7 @@ export const Auth: FC = () => {
       email,
       password,
       onSuccess: () => {
-        navigate(Paths.PREDICTION_ADJUST_PARAMETERS);
+        navigate(Paths.PROPERTY_PREDICTION_SELECT_PROJECT);
       },
       onFailure: () => {
         // error
@@ -98,7 +98,7 @@ export const Auth: FC = () => {
                 className="mb-3"
                 fill
               >
-                <Tab eventKey={AuthFormTabs.SIGN_IN_TAB} title="Sign In">
+                <Tab eventKey={AuthFormTabs.AUTH_SIGN_IN_TAB} title="Sign In">
                   <Form.Group className="mb-3">
                     <Form.Control
                       placeholder="Your Email"
@@ -122,7 +122,7 @@ export const Auth: FC = () => {
                     Continue
                   </Button>
                 </Tab>
-                <Tab eventKey={AuthFormTabs.SIGN_UP_TAB} title="Sign Up">
+                <Tab eventKey={AuthFormTabs.AUTH_SIGN_UP_TAB} title="Sign Up">
                   <Form.Group className="mb-3">
                     <Form.Control
                       placeholder="Your Email"

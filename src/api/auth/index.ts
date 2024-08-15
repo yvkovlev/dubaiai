@@ -17,7 +17,7 @@ const api = axios.create({
 
 export const signIn = async ({ email, password }: SignInRequest) => {
   const requestConfig: AxiosRequestConfig = {
-    url: `${config.API_URL}/${ApiEndpointVersion.V1}/${ApiEndpoint.SIGN_IN}`,
+    url: `${config.API_URL}/${ApiEndpointVersion.V1}/${ApiEndpoint.AUTH_SIGN_IN}`,
     method: 'post',
     data: { email, password },
   };
@@ -27,7 +27,7 @@ export const signIn = async ({ email, password }: SignInRequest) => {
 
 export const signUp = async ({ email, password }: SignUpRequest) => {
   const requestConfig: AxiosRequestConfig = {
-    url: `${config.API_URL}/${ApiEndpointVersion.V1}/${ApiEndpoint.SIGN_UP}`,
+    url: `${config.API_URL}/${ApiEndpointVersion.V1}/${ApiEndpoint.AUTH_SIGN_UP}`,
     method: 'post',
     data: { email, password },
   };
@@ -37,7 +37,7 @@ export const signUp = async ({ email, password }: SignUpRequest) => {
 
 export const refreshAccessToken = async ({ refreshToken }: RefreshAccessTokenRequest) => {
   const requestConfig: AxiosRequestConfig = {
-    url: `${config.API_URL}/${ApiEndpointVersion.V1}/${ApiEndpoint.REFRESH_ACCESS_TOKEN}`,
+    url: `${config.API_URL}/${ApiEndpointVersion.V1}/${ApiEndpoint.AUTH_REFRESH_ACCESS_TOKEN}`,
     method: 'post',
     data: { refreshToken },
   };
