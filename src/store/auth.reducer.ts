@@ -4,6 +4,7 @@ import { AppState } from '.';
 
 import { refreshAccessToken, signIn, signUp } from '../api/auth';
 import { setUserEmail, setUserId } from './user.reducer';
+import { deleteCookie, setCookie } from '../utils/cookies';
 
 export interface AuthState {
   isRequesting: boolean;
@@ -12,7 +13,7 @@ export interface AuthState {
 }
 
 export const authInitialState: AuthState = {
-  isRequesting: true,
+  isRequesting: false,
   accessToken: null,
   refreshToken: null,
 };
@@ -30,6 +31,11 @@ const authSlice = createSlice({
     setRefreshToken(state, action: PayloadAction<string | null>) {
       state.refreshToken = action.payload;
     },
+    signOut() {
+      deleteCookie('access_token');
+      deleteCookie('refresh_token');
+      return authInitialState;
+    },
   },
   extraReducers: {},
 });
@@ -45,6 +51,7 @@ export const {
   setAuthIsRequesting,
   setAccessToken,
   setRefreshToken,
+  signOut,
 } = authSlice.actions;
 
 export const signInThunk = createAsyncThunk(
@@ -74,6 +81,8 @@ export const signInThunk = createAsyncThunk(
     dispatch(setRefreshToken(signInResponse.data.refreshToken));
     dispatch(setUserEmail(email));
     // dispatch(setUserId(id));
+    setCookie('access_token', signInResponse.data.accessToken, 7);
+    setCookie('refresh_token', signInResponse.data.refreshToken, 7);
     onSuccess();
   },
 );

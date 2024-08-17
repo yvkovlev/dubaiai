@@ -1,4 +1,4 @@
-import React, { FC } from 'react';
+import React, { FC, useCallback } from 'react';
 import { NavLink } from 'react-router-dom';
 import {
   Navbar,
@@ -7,12 +7,20 @@ import {
   Nav,
 } from 'react-bootstrap';
 
+import { useAppDispatch, useAppSelector } from '../../store';
+import { selectAccessToken, signOut } from '../../store/auth.reducer';
 import logo from '../../assets/logo.svg';
 import { Paths } from '../../constants';
 
 import './Header.css';
 
 export const Header: FC = () => {
+  const dispatch = useAppDispatch();
+  const accessToken = useAppSelector(selectAccessToken);
+  const signOutHandler = useCallback(() => {
+    dispatch(signOut());
+  }, []);
+
   return (
     <Navbar expand="lg" className="Header">
       <Container>
@@ -29,7 +37,11 @@ export const Header: FC = () => {
             <NavLink to={Paths.PROPERTY_PREDICTION} className="Header__navLink nav-link">PROPERTY_PREDICTION</NavLink>
           </Nav>
           <Nav className="ml-auto">
-            <NavLink to={Paths.AUTH} className="nav-link">Sign-in / Sign-up</NavLink>
+            {
+              accessToken === null
+                ? <NavLink to={Paths.AUTH} className="nav-link">Sign-in / Sign-up</NavLink>
+                : <NavLink to={Paths.MAIN} className="nav-link" onClick={signOutHandler}>Sign-out</NavLink>
+            }
           </Nav>
         </Navbar.Collapse>
       </Container>
